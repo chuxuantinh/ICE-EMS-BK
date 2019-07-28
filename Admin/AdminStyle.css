@@ -1,0 +1,493 @@
+﻿#header
+{
+    background-image:url(../images/index.jpg);
+    background-repeat:repeat-x;
+     width:100%;
+     height:auto;
+}
+.panel
+{
+    width:100%;
+    height:auto;
+    background-image:url(../images/index.jpg);
+    background-repeat:repeat-x;
+    
+}
+input:focus,select:focus,textarea:focus
+{
+	outline:1px solid black;
+	background-color:#fffcce;
+	font:#000000; color:#000000;
+}
+.txtbox
+{
+    width:auto;
+    border:1px solid gray;
+    height: 20px;
+}
+
+.lblbox
+{
+   font-weight:bold;
+}
+#paneldiv table
+{
+   margin:0 auto;
+   width:auto;
+ 
+}
+#paneldiv h1
+{
+     font-size:18px;
+    font-family:Times New Roman;
+    font-style:normal;
+    color:Maroon;
+     padding-left:20px;
+     padding-top:10px;
+}
+#paneldiv table tr td
+{
+    text-align:left;
+    padding-left:20px;
+    font-size:12px;
+    font-family:Verdana;
+    color:Black;
+}
+.paneldivupdate h1
+{ font-size:18px;
+    font-family:Times New Roman;
+    font-style:normal;
+    color:Maroon;
+     padding-left:20px;
+     padding-top:10px;
+}
+.paneldivupdate table tr td
+{
+     text-align:left;
+    padding-left:20px;
+    font-size:12px;
+    font-family:Verdana;
+    color:Black;
+}
+.fromRegister
+{
+    padding-left:10px;
+    padding-right:10px;
+    text-align:justify;
+    width:auto;
+}
+.fromRegister h1
+{
+font-size:18px;
+    font-family:Times New Roman;
+    font-style:normal;
+    color:Maroon;
+     padding-left:20px;
+     padding-top:10px;
+}
+.fromRegisterlbl
+{
+   background-image:url(../images/index.jpg);
+     background-repeat:repeat-x;
+}
+     
+.fromRegisterlbl h1
+{  
+      font-size:18px;
+     font-family:Times New Roman;
+     font-style:normal;
+     color:Maroon;
+     padding-left:20px;
+     padding-top:10px;
+  
+ }
+   
+.txtform:hover
+{
+    border:1px solid #DE860B;
+}
+   
+#register
+{
+    border:1px solid #FF9721;
+    margin:0 auto;
+    width:60%;
+    height:auto;
+    background-color:#F7DEBA;
+}
+#imgbg
+{
+    height:250px;
+    width:200px;
+    background-image:url(../images/userbg.png);
+    background-repeat:no-repeat;
+    margin:0 auto;
+   
+}
+#newidview
+{
+    float:right;
+    margin-right:20px;
+    padding-top:40px;
+}
+
+.radimg
+{
+    position:absolute;
+    z-index:1000;
+    float:left;
+    border:none;
+}
+#photostrip
+{
+    background-image:url(../images/photostrip.png);
+    background-repeat:repeat-x;
+}
+
+/*----------------------------- Fee Table ----------------------------------*/
+.feestable
+{
+     margin:10px;
+    margin-left:20px;
+}
+.feestable table
+{
+    border:1px solid gray;
+    width:100%;
+}
+.feestable table thead tr
+{
+    background-color:#F7E77C;
+    height:30px;
+}
+.feestable table thead tr td
+{
+  text-align:center;
+    color:#858167;
+    font-weight:bolder;
+    font-size:15px;
+}
+.feestable table tbody tr
+{
+    background-color:#C2E8BE;
+   
+}
+.feestable table tbody tr td
+{
+   
+    color:Gray;
+    text-align:center;
+}
+.feestable table tfoot tr
+{
+    background-color:#E0D3D3;
+    
+}
+.feestable table tfoot tr td
+{
+    border:2px solid gray;
+    color:Gray;
+    text-align:center;
+    font-family:Verdana;
+     text-align:center;
+    color:#858167;
+    font-weight:bolder;
+    font-size:15px;
+}
+
+.feelabel
+{
+  margin-left:5px;
+  font-family:Times New Roman;
+  font-size:13px;
+  font-weight:bold;
+  color:Black;
+  text-align:center;
+  text-decoration:none; 
+}
+
+.expbox
+{
+    border:1px solid #F5821D; 
+    width:60%;
+     margin-left:20%;
+      margin-bottom:10px; 
+      background-color:#F5CAA4;
+       height:auto;
+        text-align:center;
+     padding:3px;
+}
+.imbox
+{
+    border:1px solid #F5821D; 
+    width:40%;
+     margin-left:5%;
+      margin-bottom:10px; 
+      background-color:#F5CAA4;
+       height:auto;
+        text-align:center;
+     padding:3px;
+}
+.edueditbox
+{
+    border:1px solid #F5821D; 
+    width:auto;
+     margin-left:5%;
+      margin-bottom:10px; 
+      background-color:#F5CAA4;
+       height:auto;
+        text-align:center;
+     padding:3px;
+     margin-right:5%;
+}
+.rightbox
+{
+     border:1px solid #F5821D; 
+    width:45%;
+     margin-right:10px;
+      margin-bottom:10px; 
+      background-color:#F5CAA4;
+       height:auto;
+        text-align:center;
+     padding:3px;
+     float:right;
+}
+
+.SubjectSelect
+{
+    width:500px;
+    margin:0 auto;
+    background-image:url(../images/selectbg.png);
+    background-repeat:no-repeat;
+    height:100px;
+    font-family:Times New Roman;
+    font-size:13px;
+    color:Black;
+}
+
+.PanelcheckBoxSelect
+{
+   height:40px;
+   width:100%;
+}
+ #boxmiddle
+{
+    background-image:url(../images/boxcenter.png);
+    background-repeat:repeat-x;
+    margin-left:17px;
+    margin-right:17px;
+    height:40px;
+    width:auto;
+    padding-top:10px;
+}
+
+.imgbox
+{
+    border:2px solid #F5821D;
+    width:50px;
+    height:50px;
+    background-color:#F5CAA4;
+}
+.sylabuseditbox
+{
+    padding-left:10px;
+    font-family:Times New Roman;
+    font-size:12px;
+    color:#545250;
+    font-variant:normal;
+    background-image:url(../images/topnav_bkgnd.png);
+    background-repeat:repeat-x;
+    border:1px solid gray;
+}
+.sylabuseditbox h3
+{
+    font-family:Verdana;
+    font-size:18px;
+    color:#735235;
+    text-decoration:none;
+    font-weight:bold;
+}
+.sylabuseditbox h4
+{
+    float:right;
+    margin-right:40px;
+    font-family:Verdana;
+    font-size:15px;
+    color:#735235;
+    text-decoration:none;
+    font-weight:bold;
+}
+    
+.sylabuseditbox h1
+{
+    font-size:15px;
+    font-family:Times New Roman;
+    font-weight:bold;
+    color:White;
+    text-decoration:none;
+    margin-top:10px;
+    margin-left:20px;
+}
+.sylabuseditbox b
+{
+    float:right;
+    margin-right:20px;
+    margin-top:15px;
+    font-size:12px;
+    color:#F5E0CE;
+    text-decoration:none;
+    font-style:normal;
+   
+}
+.SubEdit
+{
+    height:400px;
+    width:auto;
+}
+.SubEdit h3
+{
+     float:right;
+    margin-right:40px;
+    font-family:Verdana;
+    font-size:12px;
+    color:#265866;
+    text-decoration:none;
+    font-weight:bold;
+}
+.SubEdit h4
+{
+    font-size:15px;
+    font-family:Times New Roman;
+    font-weight:bold;
+    color:#265866;
+    text-decoration:none;
+    margin-top:10px;
+    margin-left:20px;
+}
+.boldlbl
+{
+    font-family:Times New Roman;
+    font-size:12px;
+    font-weight:bold;
+    color:#265866;
+}
+    
+    
+#bxcenter
+{
+ background-image:url(../images/bxcenter.png);
+    background-repeat:repeat-x;
+    margin-left:60px;
+    margin-right:60px;
+    height:400px;
+    width:auto;
+    padding-top:10px;
+}
+
+
+/* Password Strength */
+ .strpoor
+    {
+    	background-color:Red;
+    	font-weight:bolder;    	   	    	    	    	
+    }
+    .straverage
+    {
+    	background-color:Yellow;
+    	font-weight:bold;
+    	
+    }
+    .strunbreakable
+    {
+    	background-color:Green;
+    	font-weight:normal;    	
+    }
+      .bar
+    {
+      border:1px solid gray;
+        width:200px;
+        height:20px;
+        background-color:Red;
+    }
+.tbl
+{
+   margin-left:2%;
+}
+.editremove
+{
+    float:right;
+    margin-right:50px;
+     font-family:Verdana;
+     font-size:10px;
+     font-weight:bold;
+     color:Gray;
+     text-decoration:none;
+}
+.editremove b:hover
+{
+    color:Black;
+}
+.edubox
+{
+    margin-left:100px;
+    width:70%;
+    margin:10px;
+    padding:10px;
+}
+.docsbar
+{
+    width:auto;
+    height:50px;
+    background-image:url(../images/docsbar.png);
+    background-repeat:repeat-x;
+     
+}
+.docbar img
+{
+    text-align:center;
+    margin-left:20%;
+}
+.lbl
+{
+    margin-left:50px; 
+    color:Green;
+    text-decoration:none;
+    font-size:12px;
+    font-family:Verdana;
+}
+.lbl:hover
+{
+    color:Maroon;
+}
+.lbllnk
+{
+    color:Gray;
+    text-decoration:none;
+    font-family:Verdana;
+    font-size:15px;
+    margin-left:30px;
+}
+.lbllnk:hover
+{
+    color:Maroon;
+}
+
+.panelCenter
+{
+    margin-left:20%;
+    width:70%;
+}
+   .divshow
+   {
+     height:35px;
+     width:100%;
+     font-size:18px;
+    margin:0px 0px 0px 0px;
+     background-color:Silver;
+   }
+   .divshow h2
+   {
+       color:Maroon;
+       padding-top:7px;
+       margin-left:5px;
+   }

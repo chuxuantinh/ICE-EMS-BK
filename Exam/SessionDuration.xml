@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Session>
+  <!-- Maximum time duration in year for complition of perticular session.-->
+  <Civil>
+    <PartI>4</PartI>
+    <PartII>6</PartII>
+    <SectionA>5</SectionA>
+    <SectionB>5</SectionB>
+  </Civil>
+  <Architecture>
+    <PartI>4</PartI>
+    <PartII>6</PartII>
+    <SectionA>5</SectionA>
+    <SectionB>5</SectionB>
+  </Architecture>
+</Session>

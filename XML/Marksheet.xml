@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Session>
+  <dayta>
+    <Section Course="CPartI" Status="Not Upload" record="" />
+    <Section Course="CPartII" Status="Not Upload" record="" />
+    <Section Course="CSectionA" Status="Not Upload" record="" />
+    <Section Course="CSectionB" Status="Not Upload" record="" />
+    <Section Course="APartI" Status="Not Upload" record="" />
+    <Section Course="APartII" Status="Not Upload" record="" />
+    <Section Course="ASectionA" Status="Not Upload" record="" />
+    <Name>Win2013</Name>
+    <Section Course="ASectionB" Status="Not Upload" record="" />
+  </dayta>
+  <dayta>
+    <Section Course="CPartI" Status="Not Upload" record="" />
+    <Section Course="CPartII" Status="Not Upload" record="" />
+    <Section Course="CSectionA" Status="Not Upload" record="" />
+    <Section Course="CSectionB" Status="Not Upload" record="" />
+    <Section Course="APartI" Status="Not Upload" record="" />
+    <Section Course="APartII" Status="Not Upload" record="" />
+    <Section Course="ASectionA" Status="Not Upload" record="" />
+    <Name>Win2012</Name>
+    <Section Course="ASectionB" Status="Not Upload" record="" />
+  </dayta>
+  <dayta>
+    <Section Course="CPartI" Status="Not Upload" record="" />
+    <Section Course="CPartII" Status="Not Upload" record="" />
+    <Section Course="CSectionA" Status="Not Upload" record="" />
+    <Section Course="CSectionB" Status="Not Upload" record="" />
+    <Section Course="APartI" Status="Not Upload" record="" />
+    <Section Course="APartII" Status="Not Upload" record="" />
+    <Section Course="ASectionA" Status="Not Upload" record="" />
+    <Name>Sum2012</Name>
+    <Section Course="ASectionB" Status="Not Upload" record="" />
+  </dayta>
+</Session>

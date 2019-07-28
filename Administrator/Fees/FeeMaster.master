@@ -1,0 +1,91 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="FeeMaster.master.cs" Inherits="Administrator_Fees_FeeMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title><asp:ContentPlaceHolder ID="title" runat="server"></asp:ContentPlaceHolder></title>
+    
+    <asp:ContentPlaceHolder id="head" runat="server">
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+        <link href="../../style.css" rel="stylesheet" type="text/css" />
+        <link href="../../Admin/AdminStyle.css" rel="stylesheet" type="text/css" />
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+     <div id="page">
+    <div id="content">
+    <div id="welcome"><asp:ImageButton ID="btnNoredird" runat="server" ImageUrl="~/images/invisible.gif"  AlternateText="." TabIndex="1" /><asp:ImageButton ID="ImageButton1" TabIndex="20" runat="server" ImageUrl="~/images/home.png" ToolTip="Home" AlternateText="Home" OnClick="ibtnHome_Click" Height="20px" Width="20px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblWelcome" runat="server" ForeColor="GrayText"></asp:Label>&nbsp;&nbsp;<asp:LinkButton ID="lbtnUserName" runat="server" ></asp:LinkButton>&nbsp;&nbsp;&nbsp;<asp:LinkButton 
+            ID="lbtnLogout" runat="server" Text="Sign Out" onclick="lbtnLogout_Click"></asp:LinkButton>&nbsp;&nbsp;&nbsp;<asp:LinkButton 
+            ID="lbtnSettings" runat="server" Text="Settings" onclick="lbtnSettings_Click"></asp:LinkButton><br /><div style="float:right; margin-right:30px; margin-top:30px;">
+         <asp:Label ID="lbltest" runat="server" ></asp:Label>  <asp:ImageButton ID="refreshimage" runat="server" 
+                ImageUrl="~/images/refresh.jpg" onclick="refreshimage_Click" /></div></div>
+    <a href="#" title="ICE(I)"><img src="../../images/logo.gif" alt="ICE(I)" title="ICE (I)" width="50%" /></a><br />
+    <div id="redline"></div>
+    <div id="panelHeader" runat="server">
+    <div id="usermanage" runat="server"  >
+  <div id="adminTableHeader" runat="server"><table width="100%"><tr>
+  <td><center class="adminboxHeader" id="centAdmission" runat="server" visible="false" >
+                                       <asp:ImageButton ID="ibtnNewFees" runat="server" ImageUrl="../../images/Admission.jpg" AlternateText="Super Admin" Height="50px" Width="50px" onclick="ibtnNewFees_Click"/><br /><asp:LinkButton ID="lbtnAdmission" runat="server"  Text="New " CssClass="txt1"> </asp:LinkButton></center></td>
+  <td id="MembershipTDId" runat="server"><center class="adminboxHeader" id="centMembership" runat="server" >
+        <asp:ImageButton ID="ibtnShowFees" runat="server" ImageUrl="../../images/administrator-icon.png"  Height="50px" Width="50px" AlternateText="Membership Profile" onclick="ibtnShowFees_Click"  /><br /><asp:Label ID="lblshow" runat="server" Text="Show" CssClass="txt1"></asp:Label></center></td>
+            <td><center class="adminboxHeader" id="centAdmin" runat="server" >
+                <asp:ImageButton ID="ibtnEditFees" runat="server" ImageUrl="../../images/reception.png" Height="50px" Width="50px"  AlternateText="Super Admin" onclick="ibtnEditFees_Click"    /><br /><asp:Label ID="lblEdit" runat="server" Text="Edit" CssClass="txt1"></asp:Label></center></td>
+<td><center class="adminboxHeader" id="Center1" runat="server" ><asp:ImageButton ID="ibtnNewSchedule" runat="server" ImageUrl="../../images/reception.png" Height="50px" Width="50px"  AlternateText="Create" onclick="ibtnNewSchedule_Click"    /><br /><asp:Label ID="lblCreate" runat="server" Text="Create" CssClass="txt1"></asp:Label></center></td>
+
+<td><center class="adminboxHeader" id="Center2" runat="server" ><asp:ImageButton ID="ibtnCreateFeesHeader" runat="server" ImageUrl="~/images/feeHeader.png" Height="50px" Width="50px"  AlternateText="Fee Header" OnClick="lnkCreateFeesHeader_Click"  /><br /><asp:Label ID="Label1" runat="server" Text="Create Fee" CssClass="txt1"/></center></td>
+      <td>Select Fee Type:<br />
+          <asp:DropDownList ID="ddltype" runat="server"  AutoPostBack="True" 
+              onselectedindexchanged="ddltype_SelectedIndexChanged"  >
+              <asp:ListItem>Home</asp:ListItem>
+              <asp:ListItem>Overseas</asp:ListItem>
+             </asp:DropDownList>
+                                    </td> <td>Select Fee Level:<br /><asp:DropDownList ID="ddlFeeLevel" runat="server" 
+                                        AutoPostBack="True" 
+                                        onselectedindexchanged="ddlFeeLevel_SelectedIndexChanged" 
+                                        ></asp:DropDownList>
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                                        ConnectionString="<%$ ConnectionStrings:icedbConnectionString %>" 
+                                        
+              SelectCommand="SELECT DISTINCT [FeeLevel] FROM [FeeMaster] WHERE ([type] = @type)">
+                                        <SelectParameters>
+                                            <asp:ControlParameter ControlID="ddltype" Name="type" 
+                                                PropertyName="SelectedValue" Type="String" />
+                                        </SelectParameters>
+                                    </asp:SqlDataSource>
+      </td>
+    <td>Select Membership Type:<asp:DropDownList ID="ddlFeeType" runat="server" 
+                                        AutoPostBack="true" onselectedindexchanged="ddlFeeType_SelectedIndexChanged"><asp:ListItem Text="Associate Fee" Value="Asso"></asp:ListItem><asp:ListItem Text="Technician Fee" Value="Tech"></asp:ListItem><asp:ListItem Text="Membership Fees" Value="Ms"></asp:ListItem></asp:DropDownList></td>   
+                                  </tr></table></div>
+                                <asp:Panel ID="panelHeaderSyllabus" runat="server" >
+                                <table width="40%"><tr>
+  <td id="Td1" runat="server"><center runat="server" >
+        <asp:ImageButton ID="CivilEngineerig" runat="server" ImageUrl="../../images/books.jpg"  
+            Height="50px" Width="50px" AlternateText="Membership Profile" onclick="CivilEngineerig_Click"  /><br />
+        <asp:LinkButton ID="LinkButton2" runat="server" Text="Civil Engineering " 
+            CssClass="txt1" onclick="LinkButton2_Click"> </asp:LinkButton>
+      </center></td>
+            <td><center runat="server">
+                <asp:ImageButton ID="ArchiEngineering" runat="server" ImageUrl="../../images/books.jpg" Height="50px" Width="50px" AlternateText="Super Admin" onclick="ArchiEngineering_Click"/><br />
+                <asp:LinkButton ID="LinkButton3" runat="server"  
+                    Text="Architectural Engineering" CssClass="txt1" onclick="LinkButton3_Click"> </asp:LinkButton></center></td>
+                             <td>Select Syllabus Level:<br /> <asp:DropDownList ID="ddlSullabus" runat="server" AutoPostBack="True" onselectedindexchanged="ddlSyllabusLevel_SelectedIndexChanged" ></asp:DropDownList></td>      
+                                  </tr></table>
+                                </asp:Panel>
+                                </div>
+                                 </div>
+ <hr />
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+   <br /><br />
+    </div><br />
+    </div>
+    <!-- footer -->
+    <div class="footer">
+     <br /><br /><center><table><tr><td><a href="#" title="About ICE (I)">About ICE(I)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;href="#" title="About ICE (I)">Home>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="About ICE (I)">Term & Condition</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="About ICE (I)">Help & Support</a></td></tr></table></center>
+	<center>© Copyright The Institution of Civil Engineers (India). All Rights Reserved</center>
+	</div>
+    </form>
+</body>
+</html>

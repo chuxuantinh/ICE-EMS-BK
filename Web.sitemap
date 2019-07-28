@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="SiteMap.aspx" title="Home"  description="Home Page">
+    <siteMapNode url="StandardToolBox.aspx" title="Standard ToolBox Control"  description="Standard ToolBox Control">
+      <siteMapNode url="BulletedList.aspx" title="BulltedList Example"  description="BulltedList Control Simple Example" />
+      <siteMapNode url="CheckBox.aspx" title="CheckBox Example"  description="CheckBox Control Simple Example" />
+      <siteMapNode url="CheckBoxList.aspx" title="CheckBoxList Example"  description="CheckBoxList Control Simple Example" />
+      <siteMapNode url="Image.aspx" title="Image Control Example" description="Image Control Simple Example"/>
+    </siteMapNode>
+    <siteMapNode url="DataToolBox.aspx" title="Data ToolBox Control"  description="Data ToolBox Control">
+      <siteMapNode url="SqlDataSource.aspx" title="SqlDataSource Example"  description="SqlDataSource Simple Example" />
+      <siteMapNode url="XmlDataSource.aspx" title="XmlDataSource Example"  description="XmlDataSource Simple Example" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

@@ -1,0 +1,172 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="IMMaster.master.cs" Inherits="Administrator_IMMaster" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="dev" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title><asp:ContentPlaceHolder ID="title" runat="server" ></asp:ContentPlaceHolder></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+     <link rel="stylesheet" href="../style.css" type="text/css" charset="utf-8" />	
+    <link href="../Admin/AdminStyle.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="Scriptmanagerr1" runat="server" ></asp:ScriptManager>
+    <div id="page">
+    <div id="content">
+    <div id="welcome"><asp:ImageButton ID="btnNoredird" runat="server" ImageUrl="~/images/invisible.gif"  AlternateText="." TabIndex="1" /><asp:ImageButton ID="ImageButton4" TabIndex="20" runat="server" ImageUrl="~/images/home.png" ToolTip="Home" AlternateText="Home" OnClick="ibtnHome_Click" Height="20px" Width="20px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblWelcome" runat="server" ForeColor="GrayText"></asp:Label>&nbsp;&nbsp;<asp:LinkButton ID="lbtnUserName" runat="server" ></asp:LinkButton>&nbsp;&nbsp;&nbsp;<asp:LinkButton 
+            ID="lbtnLogout" runat="server" Text="Sign Out" onclick="lbtnLogout_Click"></asp:LinkButton>&nbsp;&nbsp;&nbsp;<asp:LinkButton ID="lbtnSettings" runat="server" Text="Settings"></asp:LinkButton><br /><div style="float:right; margin-right:30px; margin-top:30px;"><br />
+        <%--<b id="ViewIDPanel" runat="server" >Insert Membership ID:&nbsp;&nbsp;<br /><asp:TextBox ID="txtNewIdView" runat="server" ></asp:TextBox>&nbsp;&nbsp;&nbsp;<asp:Button 
+            ID="btnViewNewId" runat="server" Text="View" onclick="btnViewNewId_Click" Enabled="false" /></b>--%>&nbsp;&nbsp;&nbsp;<asp:Label ID="lbltest" runat="server" ></asp:Label>  <asp:ImageButton ID="refreshimage" runat="server" 
+                ImageUrl="~/images/refresh.jpg" onclick="refreshimage_Click" /></div></div>
+    <a href="#" title="ICE(I)"><img src="../images/logo.gif" alt="ICE(I)" title="ICE (I)" width="50%" /></a><br />
+    <div id="redline"></div>
+    <asp:Panel ID="panelMembership" runat="server" >
+    <!-- Membership panel -->
+     <div id="usermanage" runat="server"  >
+    <table width="60%" style="text-align:center;"><tr> <td><asp:ImageButton Height="40px" Width="40px" ID="ibtnUserManagement" runat="server" CssClass="imgbtncreate"  AlternateText="User of this Module" onclick="btnManageAdmin_Click" ImageUrl="~/images/createcolor.png"/><br />User Manage</td>
+    <td><asp:ImageButton Height="40px" Width="40px" ID="imgbtnCreate" runat="server" CssClass="imgbtncreate"  AlternateText="Register New Membership" onclick="ibtnRegisterMem_Click" ImageUrl="~/images/member.jpg"/><br />NewMembership</td>
+            <td style="color:Maroon;"><asp:ImageButton Height="40px" Width="40px" ID="ibtnIMInspection" runat="server" CssClass="imgbtncreate"  AlternateText="Manage [Active or Disactive Membership]" onclick="imgbtnManageMembership_Click" ImageUrl="~/images/inspection.jpg"/><br />Inspection</td>
+            <td><asp:ImageButton Height="40px" Width="40px" ID="ibtnAnnualSubscriptin" runat="server" CssClass="imgbtncreate"  AlternateText="Annual Subscription" onclick="btnSubscription_Click" ImageUrl="~/images/user_update.png"/><br />Subscription</td>                
+            <td>
+            <asp:ImageButton ID="ibtnvewProfile" runat="server"  ValidationGroup="strip"
+                ImageUrl="~/images/UserIcon.jpg" onclick="ibtnvewProfile_Click" /><br />ViewProfile</td>
+                <td>
+            <asp:ImageButton ID="ibtnCertificate" runat="server"  ValidationGroup="strip"
+                ImageUrl="~/images/certificate.png" onclick="ibtnCertificate_Click" /><br />Certificate</td>
+            <td id="tdReports" runat="server"><asp:ImageButton Height="40px" Width="40px" 
+                    ID="ibtnReports" runat="server" CssClass="imgbtncreate"  
+                    AlternateText="Reports" ImageUrl="~/images/report1.jpg" 
+                    onclick="ibtnReports_Click"/><br /><a id="A2" href="~/Reports/MemberRpt.aspx" style="text-decoration:none; color:Black;" target="_blank" runat="server"  >Reports</a></td>
+            </tr></table>
+    </div>
+   </asp:Panel>
+    <hr />
+    <div id="leftpanel2">
+<div id="leftteg" >
+<asp:Panel ID="panelAdminManage" runat="server" >
+    <script>
+        function toggle100(showHideDiv, switchImgTag) {
+            var ele = document.getElementById(showHideDiv);
+            var imageEle = document.getElementById(switchImgTag);
+            if (ele.style.display == "block") {
+                ele.style.display = "none";
+                imageEle.innerHTML = '<img src="../images/plus.png">';
+            }
+            else {
+                ele.style.display = "block";
+                imageEle.innerHTML = '<img src="../images/minus.png">';
+            }
+        }
+    </script>
+  <div class="togelleft">
+    <div class="headerDivImg">
+    <a id="imageDivLink100" href="javascript:toggle('contentDivImg100', 'imageDivLink100');"><img src="../images/minus.png" alt="Show"></a>
+</div><h1>Register New IM</h1>
+<div id="contentDivImg100" style="display: block;"> 
+   <br />
+   <div id="leftLink">
+   <ul><li><asp:LinkButton ID="btnRegisterNew" runat="server" Text="Register New IM" 
+           CssClass="leftlink" onclick="btnRegisterNew_Click"></asp:LinkButton></li>
+   <li><asp:LinkButton ID="btnIMHaed" runat="server" Text="Submit Head of IM"
+           CssClass="leftlink" onclick="btnIMHaed_Click"></asp:LinkButton></li>
+   <li><asp:LinkButton ID="btnBuildinfo" runat="server" Text="Submit Building Information" 
+           CssClass="leftlink" onclick="btnBuildinfo_Click" ></asp:LinkButton></li>
+           <li><asp:LinkButton ID="lbtnInfoection" runat="server" Text="Submit Infection Report" 
+           CssClass="leftlink" onclick="btnInfection_Click" ></asp:LinkButton></li>
+   <li><asp:LinkButton ID="lbtnChangeStatus" runat="server" Text="Change Status" OnClick="lbtnChangeStatus_Onclick"
+              CssClass="leftlink" ></asp:LinkButton></li>
+   </ul>
+    </div>
+    </div>
+   </div>
+   </asp:Panel>
+  <asp:Panel ID="panelManage" runat="server" >
+  <script>
+      function toggle999(showHideDiv, switchImgTag) {
+          var ele = document.getElementById(showHideDiv);
+          var imageEle = document.getElementById(switchImgTag);
+          if (ele.style.display == "block") {
+              ele.style.display = "none";
+              imageEle.innerHTML = '<img src="../images/plus.png">';
+          }
+          else {
+              ele.style.display = "block";
+              imageEle.innerHTML = '<img src="../images/minus.png">';
+          }
+      }
+    </script>
+  <div class="togelleft">
+    <div class="headerDivImg">
+    <a id="imageDivLink99" href="javascript:toggle999('contentDivImg99', 'imageDivLink99');"><img src="../images/minus.png" alt="Show"></a>
+</div><h1>Manage Profile</h1>
+<div id="contentDivImg99" style="display: block;"> 
+   <br />
+       <div class="leftlist">
+          <ul><li><asp:LinkButton ID="lbtnManagePProfile" runat="server" Text="IM Profile" 
+           CssClass="leftlink" OnClick="lbtnMangeProfile_Onclick"  ></asp:LinkButton></li>
+      <li><asp:LinkButton ID="lbtnmanageIMHead" runat="server" 
+              Text="IM Head Profile" CssClass="leftlink" OnClick="lbtnMangeIMHead_OnClick"
+               ></asp:LinkButton></li>
+      <li><asp:LinkButton ID="lbtnBuildingManage" runat="server" Text="Building Information" OnClick="lbtnMangeBuilding_Onclick"
+              CssClass="leftlink"></asp:LinkButton></li>
+              <li><asp:LinkButton ID="lbtnChageImages" runat="server"  Text="Change Profile Images" CssClass="leftlink" OnClick="lbtnChangeImage_OnClick"></asp:LinkButton></li>
+              <li><asp:LinkButton ID="lbtnUpdateDate" runat="server"  Text="Update Registration Date" CssClass="leftlink" OnClick="lbtnUpdatedate_OnClick"></asp:LinkButton></li>
+                    <li><asp:LinkButton ID="lbtnReport" runat="server" Text="Reports Section" CssClass="leftlink" onclick="lbtnReport_Click"></asp:LinkButton></li>
+   </ul></div></div></div>
+  </asp:Panel>
+   <asp:Panel ID="panelVieprofile" runat="server" >
+    <script>
+        function toggle10(showHideDiv, switchImgTag) {
+            var ele = document.getElementById(showHideDiv);
+            var imageEle = document.getElementById(switchImgTag);
+            if (ele.style.display == "block") {
+                ele.style.display = "none";
+                imageEle.innerHTML = '<img src="../images/plus.png">';
+            }
+            else {
+                ele.style.display = "block";
+                imageEle.innerHTML = '<img src="../images/minus.png">';
+            }
+        }
+    </script>
+  <div class="togelleft">
+    <div class="headerDivImg">
+    <a id="A1" href="javascript:toggle10('Div1', 'A1');"><img src="../images/minus.png" alt="Show"></a>
+</div><h1>IM Profile View</h1>
+<div id="Div1" style="display: block;"> 
+   <br />
+   <div class="leftlist">
+   <ul><li><asp:LinkButton ID="lbtnViewProfile" runat="server" Text=" IM Profile" 
+           CssClass="leftlink" onclick="lbtnViewProfile_Click"></asp:LinkButton></li>
+   <li><asp:LinkButton ID="lbtnHeadofIM" runat="server" Text="IM Head Profile" 
+           CssClass="leftlink" onclick="lbtnHeadofIM_Click"></asp:LinkButton></li>
+   <li><asp:LinkButton ID="lbtnBuildingInfo" runat="server"  
+           Text="Building Information" CssClass="leftlink" 
+           onclick="lbtnBuildingInfo_Click"></asp:LinkButton></li>
+           <li><asp:LinkButton ID="lbtnProfileStatus" runat="server" OnClick="lbtnViewProfileImage_Onclick" 
+           Text="Profile Images" CssClass="leftlink" ></asp:LinkButton></li>
+   </ul>
+    </div>
+    </div>
+   </div>
+   </asp:Panel>
+</div>
+</div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    <!--  end right Panel ---> 
+    </div><br />
+    </div>
+    <!-- footer -->
+    <div class="footer">
+     <br /><br /><center><table><tr><td><a href="#" title="About ICE (I)">About ICE(I)</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="About ICE (I)">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="About ICE (I)">Term & Condition</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="About ICE (I)">Help & Support</a></td></tr></table></center>
+	<center>© Copyright The Institution of Civil Engineers (India). All Rights Reserved</center>
+	</div>
+    </form>
+   
+</body>
+</html>

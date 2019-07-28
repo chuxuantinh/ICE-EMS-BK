@@ -1,0 +1,8 @@
+AMICE(I) Arch. Engg. Section A
+AMICE(I) Arch. Engg. Section B
+T. Engg. Arch. Engg. Part I
+T. Engg. Arch. Engg. Part II
+T. Engg. Civil Part I
+T. Engg. Civil Part II
+AMICE(I) Civil Section B
+AMICE(I) Civil Section A

@@ -1,0 +1,139 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Administrator.master.cs"
+    Inherits="Administrator_Administrator" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <link rel="stylesheet" href="../style.css" type="text/css" charset="utf-8" />
+    <script src="../jquery.tools.min.js" type="text/javascript"></script>
+    <link href="../Admin/AdminStyle.css" rel="stylesheet" type="text/css" />
+    <link href="../tooltip-generic.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="page">
+        <div id="content">
+            <div id="welcome">
+                <asp:ImageButton ID="btnNoredird" runat="server" ImageUrl="~/images/invisible.gif"
+                    AlternateText="." TabIndex="1" /><asp:ImageButton ID="ImageButton1" runat="server"
+                        TabIndex="20" ImageUrl="~/images/home.png" ToolTip="Home" AlternateText="Home"
+                        OnClick="ibtnHome_Click" Height="20px" Width="20px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label
+                            ID="lblWelcome" runat="server" ForeColor="GrayText"></asp:Label>&nbsp;&nbsp;<asp:LinkButton
+                                ID="lbtnUserName" runat="server"></asp:LinkButton>&nbsp;&nbsp;&nbsp;<asp:LinkButton
+                                    ID="lbtnLogout" runat="server" Text="Sign Out" OnClick="lbtnLogout_Click"></asp:LinkButton>&nbsp;&nbsp;&nbsp;<asp:LinkButton
+                                        ID="lbtnSettings" runat="server" Text="Settings" OnClick="lbtnSettings_Click"></asp:LinkButton><br />
+                <div style="float: right; margin-right: 30px; margin-top: 30px;">
+                    <asp:Label ID="lbltest" runat="server"></asp:Label>
+                    <asp:ImageButton ID="refreshimage" runat="server" ToolTip="Refresh page" ImageUrl="~/images/refresh.jpg"
+                        OnClick="refreshimage_Click" /></div>
+            </div>
+            <a href="#" title="ICE(I)">
+                <img src="../images/logo.gif" alt="ICE(I)" title="ICE (I)" width="50%" /></a><br />
+            <div id="redline">
+            </div>
+            <asp:Panel ID="panelMembership" runat="server">
+                <!-- Membership panel -->
+                <div id="usermanage" runat="server">
+                    <table width="60%" style="text-align: center; font-weight: bold;">
+                        <tr>
+                            <td id="tdHome" runat="server">
+                                <asp:ImageButton Height="40px" Width="40px" ID="ibtnHome" runat="server" CssClass="imgbtncreate"
+                                    AlternateText="Membership Home" ImageUrl="~/images/member2.png" OnClick="ibtnHome_Click1" /><br />
+                                &nbsp;&nbsp;Home
+                            </td>
+                            <td id="tdUserManage" runat="server">
+                                <asp:ImageButton Height="40px" Width="40px" ID="ibtnUserManage" runat="server" CssClass="imgbtncreate"
+                                    AlternateText="Membership User Manage" OnClick="btnManageAdmin_Click" ImageUrl="~/images/createcolor.png" /><br />
+                                User Manage
+                            </td>
+                            <td id="tdManagegroups" runat="server">
+                                <asp:ImageButton Height="40px" Width="40px" ID="ibtnManagegroups" runat="server"
+                                    CssClass="imgbtncreate" AlternateText="Manage Groups" ImageUrl="~/images/groups1.png"
+                                    OnClick="ibtnManagegroups_Click" /><br />
+                                Manage groups
+                            </td>
+                            <td id="tdLetters" runat="server">
+                                <asp:ImageButton Height="40px" Width="40px" ID="ibtnLetters" runat="server" CssClass="imgbtncreate"
+                                    AlternateText="Letters" ImageUrl="~/images/letter.jpg" OnClick="ibtnLetters_Click" /><br />
+                                &nbsp;&nbsp;Letters
+                            </td>
+                            <td id="tdReports" runat="server">
+                                <asp:ImageButton Height="40px" Width="40px" ID="ibtnReports" runat="server" CssClass="imgbtncreate"
+                                    AlternateText="Reports" ImageUrl="~/images/report1.jpg" OnClick="ibtnReports_Click" /><br />
+                                <a id="A1" href="~/Reports/MemberRpt.aspx" target="_blank" runat="server" style="text-decoration: none;
+                                    color: Black;">Reports</a>
+                            </td>
+                            <td id="tdDocuments" runat="server">
+                                <asp:ImageButton Height="40px" Width="40px" ID="ibtnDocuments" runat="server" CssClass="imgbtncreate"
+                                    AlternateText="Letters" ImageUrl="~/images/Downloads.png" 
+                                    onclick="ibtnDocuments_Click"  /><br />
+                                 IM Documents
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </asp:Panel>
+            <asp:ContentPlaceHolder ID="ContentHeader" runat="server">
+            </asp:ContentPlaceHolder>
+            <script type="text/javascript">
+                function toggle(showHideDiv, switchImgTag) {
+                    var ele = document.getElementById(showHideDiv);
+                    var imageEle = document.getElementById(switchImgTag);
+                    if (ele.style.display == "block") {
+                        ele.style.display = "none";
+                        imageEle.innerHTML = '<img src="../images/plus.png">';
+                    }
+                    else {
+                        ele.style.display = "block";
+                        imageEle.innerHTML = '<img src="../images/minus.png">';
+                    }
+                }
+            </script>
+            <%--<div class="togal">
+    <div class="headerDivImg">
+    
+    <a id="imageDivLink1" href="javascript:toggle('contentDivImg1', 'imageDivLink1');"><img src="../images/minus.png" alt="Show"></a>
+</div><br /><br />
+<div id="contentDivImg1" style="display: block;"> 
+    
+   <br />
+    
+    </div>
+   </div>--%><hr />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <br />
+            <br />
+        </div>
+        <br />
+    </div>
+    <!-- footer -->
+    <div class="footer">
+        <br />
+        <br />
+        <center>
+            <table>
+                <tr>
+                    <td>
+                        <a href="#" title="About ICE (I)">About ICE(I)</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+                            href="#" title="About ICE (I)">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+                                href="#" title="About ICE (I)">Term & Condition</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+                                    href="#" title="About ICE (I)">Help & Support</a>
+                    </td>
+                </tr>
+            </table>
+        </center>
+        <center>
+            © Copyright The Institution of Civil Engineers (India). All Rights Reserved</center>
+    </div>
+    </form>
+</body>
+</html>

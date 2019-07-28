@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReChecking" targetNamespace="http://tempuri.org/dsReChecking.xsd" xmlns:mstns="http://tempuri.org/dsReChecking.xsd" xmlns="http://tempuri.org/dsReChecking.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="icedbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="icedbConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.icedbConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReCheckingSubmittedTableAdapter" GeneratorDataComponentClassName="ReCheckingSubmittedTableAdapter" Name="ReCheckingSubmitted" UserDataComponentName="ReCheckingSubmittedTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="icedbConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AppRecord.CAD AS SN, SExamMarks.RollNo, Rechecking.SID, AppRecord.Name, AppRecord.Course, AppRecord.Part, AppRecord.IMID, Rechecking.SubID, 
+                         SExamMarks.GetMarks, SExamMarks.Center
+FROM            AppRecord INNER JOIN
+                         Rechecking ON AppRecord.AppNo = Rechecking.AppNo INNER JOIN
+                         SExamMarks ON SExamMarks.SID = AppRecord.SID AND Rechecking.SubID = SExamMarks.SubID
+WHERE        (Rechecking.Session = 'Win2012') AND (AppRecord.Session = 'Sum2013')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SN" DataSetColumn="SN" />
+              <Mapping SourceColumn="RollNo" DataSetColumn="RollNo" />
+              <Mapping SourceColumn="SID" DataSetColumn="SID" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Course" DataSetColumn="Course" />
+              <Mapping SourceColumn="Part" DataSetColumn="Part" />
+              <Mapping SourceColumn="IMID" DataSetColumn="IMID" />
+              <Mapping SourceColumn="SubID" DataSetColumn="SubID" />
+              <Mapping SourceColumn="GetMarks" DataSetColumn="GetMarks" />
+              <Mapping SourceColumn="Center" DataSetColumn="Center" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RecheckingTableAdapter" GeneratorDataComponentClassName="RecheckingTableAdapter" Name="Rechecking" UserDataComponentName="RecheckingTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="icedbConnectionString (Web.config)" DbObjectName="ICEData.dbo.Rechecking" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Rechecking] ([SID], [SubID], [Session], [AppNo], [Status], [OldMarks], [NewMarks]) VALUES (@SID, @SubID, @Session, @AppNo, @Status, @OldMarks, @NewMarks)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SubID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SubID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Session" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Session" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@AppNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AppNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Status" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@OldMarks" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OldMarks" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@NewMarks" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NewMarks" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Rechecking.*
+FROM            Rechecking</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SN" DataSetColumn="SN" />
+              <Mapping SourceColumn="SID" DataSetColumn="SID" />
+              <Mapping SourceColumn="SubID" DataSetColumn="SubID" />
+              <Mapping SourceColumn="Session" DataSetColumn="Session" />
+              <Mapping SourceColumn="AppNo" DataSetColumn="AppNo" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="OldMarks" DataSetColumn="OldMarks" />
+              <Mapping SourceColumn="NewMarks" DataSetColumn="NewMarks" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReChecking" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dsReChecking" msprop:Generator_UserDSName="dsReChecking">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ReCheckingSubmitted" msprop:Generator_TableClassName="ReCheckingSubmittedDataTable" msprop:Generator_TableVarName="tableReCheckingSubmitted" msprop:Generator_TablePropName="ReCheckingSubmitted" msprop:Generator_RowDeletingName="ReCheckingSubmittedRowDeleting" msprop:Generator_UserTableName="ReCheckingSubmitted" msprop:Generator_RowChangingName="ReCheckingSubmittedRowChanging" msprop:Generator_RowEvHandlerName="ReCheckingSubmittedRowChangeEventHandler" msprop:Generator_RowDeletedName="ReCheckingSubmittedRowDeleted" msprop:Generator_RowEvArgName="ReCheckingSubmittedRowChangeEvent" msprop:Generator_RowChangedName="ReCheckingSubmittedRowChanged" msprop:Generator_RowClassName="ReCheckingSubmittedRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SN" msprop:Generator_ColumnVarNameInTable="columnSN" msprop:Generator_ColumnPropNameInRow="SN" msprop:Generator_ColumnPropNameInTable="SNColumn" msprop:Generator_UserColumnName="SN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RollNo" msprop:Generator_ColumnVarNameInTable="columnRollNo" msprop:Generator_ColumnPropNameInRow="RollNo" msprop:Generator_ColumnPropNameInTable="RollNoColumn" msprop:Generator_UserColumnName="RollNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SID" msprop:Generator_ColumnVarNameInTable="columnSID" msprop:Generator_ColumnPropNameInRow="SID" msprop:Generator_ColumnPropNameInTable="SIDColumn" msprop:Generator_UserColumnName="SID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Course" msprop:Generator_ColumnVarNameInTable="columnCourse" msprop:Generator_ColumnPropNameInRow="Course" msprop:Generator_ColumnPropNameInTable="CourseColumn" msprop:Generator_UserColumnName="Course" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Part" msprop:Generator_ColumnVarNameInTable="columnPart" msprop:Generator_ColumnPropNameInRow="Part" msprop:Generator_ColumnPropNameInTable="PartColumn" msprop:Generator_UserColumnName="Part" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IMID" msprop:Generator_ColumnVarNameInTable="columnIMID" msprop:Generator_ColumnPropNameInRow="IMID" msprop:Generator_ColumnPropNameInTable="IMIDColumn" msprop:Generator_UserColumnName="IMID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubID" msprop:Generator_ColumnVarNameInTable="columnSubID" msprop:Generator_ColumnPropNameInRow="SubID" msprop:Generator_ColumnPropNameInTable="SubIDColumn" msprop:Generator_UserColumnName="SubID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GetMarks" msprop:Generator_ColumnVarNameInTable="columnGetMarks" msprop:Generator_ColumnPropNameInRow="GetMarks" msprop:Generator_ColumnPropNameInTable="GetMarksColumn" msprop:Generator_UserColumnName="GetMarks" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Center" msprop:Generator_ColumnVarNameInTable="columnCenter" msprop:Generator_ColumnPropNameInRow="Center" msprop:Generator_ColumnPropNameInTable="CenterColumn" msprop:Generator_UserColumnName="Center" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Rechecking" msprop:Generator_TableClassName="RecheckingDataTable" msprop:Generator_TableVarName="tableRechecking" msprop:Generator_TablePropName="Rechecking" msprop:Generator_RowDeletingName="RecheckingRowDeleting" msprop:Generator_UserTableName="Rechecking" msprop:Generator_RowChangingName="RecheckingRowChanging" msprop:Generator_RowEvHandlerName="RecheckingRowChangeEventHandler" msprop:Generator_RowDeletedName="RecheckingRowDeleted" msprop:Generator_RowEvArgName="RecheckingRowChangeEvent" msprop:Generator_RowChangedName="RecheckingRowChanged" msprop:Generator_RowClassName="RecheckingRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SN" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSN" msprop:Generator_ColumnPropNameInRow="SN" msprop:Generator_ColumnPropNameInTable="SNColumn" msprop:Generator_UserColumnName="SN" type="xs:int" />
+              <xs:element name="SID" msprop:Generator_ColumnVarNameInTable="columnSID" msprop:Generator_ColumnPropNameInRow="SID" msprop:Generator_ColumnPropNameInTable="SIDColumn" msprop:Generator_UserColumnName="SID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubID" msprop:Generator_ColumnVarNameInTable="columnSubID" msprop:Generator_ColumnPropNameInRow="SubID" msprop:Generator_ColumnPropNameInTable="SubIDColumn" msprop:Generator_UserColumnName="SubID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Session" msprop:Generator_ColumnVarNameInTable="columnSession" msprop:Generator_ColumnPropNameInRow="Session" msprop:Generator_ColumnPropNameInTable="SessionColumn" msprop:Generator_UserColumnName="Session" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AppNo" msprop:Generator_ColumnVarNameInTable="columnAppNo" msprop:Generator_ColumnPropNameInRow="AppNo" msprop:Generator_ColumnPropNameInTable="AppNoColumn" msprop:Generator_UserColumnName="AppNo" type="xs:int" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OldMarks" msprop:Generator_ColumnVarNameInTable="columnOldMarks" msprop:Generator_ColumnPropNameInRow="OldMarks" msprop:Generator_ColumnPropNameInTable="OldMarksColumn" msprop:Generator_UserColumnName="OldMarks" type="xs:int" minOccurs="0" />
+              <xs:element name="NewMarks" msprop:Generator_ColumnVarNameInTable="columnNewMarks" msprop:Generator_ColumnPropNameInRow="NewMarks" msprop:Generator_ColumnPropNameInTable="NewMarksColumn" msprop:Generator_UserColumnName="NewMarks" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

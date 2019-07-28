@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FinalPass>
+  <Fees SessionID="1" Associate="2500" Technician="2000"></Fees>
+  <Fees SessionID="2" Associate="2500" Technician="2000"></Fees>
+  <Fees SessionID="3" Associate="2500" Technician="2000"></Fees>
+  <Fees SessionID="4" Associate="2500" Technician="2000"></Fees>
+  <Fees SessionID="5" Associate="2500" Technician="2000"></Fees>
+  <Fees SessionID="6" Associate="2500" Technician="2000"></Fees>
+  <Fees SessionID="7" Associate="2500" Technician="2000"></Fees>
+  <Fees SessionID="8" Associate="2500" Technician="2000"></Fees>
+  <Fees SessionID="9" Associate="2500" Technician="2000"></Fees>
+  <Fees SessionID="10" Associate="4500" Technician="4000"></Fees>
+  <Fees SessionID="11" Associate="4500" Technician="4000"></Fees>
+  <Fees SessionID="12" Associate="4500" Technician="4000"></Fees>
+  <Fees SessionID="13" Associate="4500" Technician="4000"></Fees>
+</FinalPass>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Edit>
+  <DiaryEntry Counter="65" Total="65">
+  </DiaryEntry>
+  <DiarySupply Counter="45" Total="867">
+  </DiarySupply>
+  <DDEntry Counter="46" Total="444">
+  </DDEntry>
+  <ApplicationAdd Counter="3" Total="207">
+  </ApplicationAdd>
+  <ApplicationApprove Counter="50" Total="50">
+  </ApplicationApprove>
+</Edit>

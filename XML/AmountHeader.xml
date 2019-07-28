@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <Amount>
+    <Aname>Academic</Aname>
+  </Amount>
+  <Amount>
+    <Aname>AutoCAD</Aname>
+  </Amount>
+  <Amount>
+    <Aname>Project</Aname>
+  </Amount>
+  <Amount>
+    <Aname>Prospectus</Aname>
+  </Amount>
+  <Amount>
+    <Aname>Other</Aname>
+  </Amount>
+  <Amount>
+    <Aname>Test</Aname>
+  </Amount>
+</DocumentElement>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsAC2" targetNamespace="http://tempuri.org/dsAC2.xsd" xmlns:mstns="http://tempuri.org/dsAC2.xsd" xmlns="http://tempuri.org/dsAC2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="icedbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="icedbConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.icedbConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ConsolidateAmountTableAdapter" GeneratorDataComponentClassName="ConsolidateAmountTableAdapter" Name="ConsolidateAmount" UserDataComponentName="ConsolidateAmountTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="icedbConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>
+select FeeACsum.imid, feeacsum.Feeamount, AppRecordsum.appAmount,(Feeacsum.feeamount-AppRecordsum.AppAmount) as Balance from Feeacsum inner join AppRecordSum on Feeacsum.imid=AppRecordsum.imid  and Feeacsum.Session=AppRecordsum.Session</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="imid" DataSetColumn="imid" />
+              <Mapping SourceColumn="Feeamount" DataSetColumn="Feeamount" />
+              <Mapping SourceColumn="appAmount" DataSetColumn="appAmount" />
+              <Mapping SourceColumn="Balance" DataSetColumn="Balance" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsAC2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dsAC2" msprop:Generator_UserDSName="dsAC2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ConsolidateAmount" msprop:Generator_TableClassName="ConsolidateAmountDataTable" msprop:Generator_TableVarName="tableConsolidateAmount" msprop:Generator_TablePropName="ConsolidateAmount" msprop:Generator_RowDeletingName="ConsolidateAmountRowDeleting" msprop:Generator_UserTableName="ConsolidateAmount" msprop:Generator_RowChangingName="ConsolidateAmountRowChanging" msprop:Generator_RowEvHandlerName="ConsolidateAmountRowChangeEventHandler" msprop:Generator_RowDeletedName="ConsolidateAmountRowDeleted" msprop:Generator_RowEvArgName="ConsolidateAmountRowChangeEvent" msprop:Generator_RowChangedName="ConsolidateAmountRowChanged" msprop:Generator_RowClassName="ConsolidateAmountRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="imid" msprop:Generator_ColumnVarNameInTable="columnimid" msprop:Generator_ColumnPropNameInRow="imid" msprop:Generator_ColumnPropNameInTable="imidColumn" msprop:Generator_UserColumnName="imid" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Feeamount" msprop:Generator_ColumnVarNameInTable="columnFeeamount" msprop:Generator_ColumnPropNameInRow="Feeamount" msprop:Generator_ColumnPropNameInTable="FeeamountColumn" msprop:Generator_UserColumnName="Feeamount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="appAmount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnappAmount" msprop:Generator_ColumnPropNameInRow="appAmount" msprop:Generator_ColumnPropNameInTable="appAmountColumn" msprop:Generator_UserColumnName="appAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Balance" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBalance" msprop:Generator_ColumnPropNameInRow="Balance" msprop:Generator_ColumnPropNameInTable="BalanceColumn" msprop:Generator_UserColumnName="Balance" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

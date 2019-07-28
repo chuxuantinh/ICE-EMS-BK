@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ICEData" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ABACUS-13-PC;Initial Catalog=ICEData;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ICEDataConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Result" Member="Results">
+    <Type Name="Result">
+      <Column Name="ExamSeason" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RSID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SubID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="GetMarks" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="RSession" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+      <Column Name="ATime" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="IMID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="ECourse" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Part" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RCourse" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RPart" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CivilSubMaster" Member="CivilSubMasters">
+    <Type Name="CivilSubMaster">
+      <Column Name="SN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SubID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SubName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MaxMark" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MinMark" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="First" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lvl" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Section" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SubjectType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CourseID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ArchiSubMaster" Member="ArchiSubMasters">
+    <Type Name="ArchiSubMaster">
+      <Column Name="SN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SubID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SubName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MaxMark" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MinMark" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="First" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lvl" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Section" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SubjectType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CourseID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.APartI" Member="APartIs">
+    <Type Name="APartI">
+      <Column Name="ExamSeason" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SubID" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Marks" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="RStatus" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Session" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SID" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Course" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Part" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CPartI" Member="CPartIs">
+    <Type Name="CPartI">
+      <Column Name="ExamSeason" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SubID" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Marks" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="RStatus" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Session" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SID" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Course" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Part" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CPartII" Member="CPartIIs">
+    <Type Name="CPartII">
+      <Column Name="ExamSeason" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SubID" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Marks" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="RStatus" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Session" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SID" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Course" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Part" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ResultCPartI" Member="ResultCPartIs">
+    <Type Name="ResultCPartI">
+      <Column Name="SN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SID" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SubID" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Marks" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Session" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

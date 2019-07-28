@@ -1,0 +1,283 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Account.master.cs" Inherits="Acc_Account" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="dev" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="title" runat="server" ></asp:ContentPlaceHolder></title>
+     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+     <link rel="stylesheet" href="../style.css" type="text/css" charset="utf-8" />	
+    <link href="../Admin/AdminStyle.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="page">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+    <div id="content">
+    <div id="welcome"><asp:ImageButton ID="btnNoredird" runat="server" ImageUrl="~/images/invisible.gif"  AlternateText="." TabIndex="1" /><asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/images/home.png" ToolTip="Home" AlternateText="Home" OnClick="ibtnHome_Click" Height="20px" Width="20px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblWelcome" runat="server" ForeColor="GrayText"></asp:Label>&nbsp;&nbsp;<asp:LinkButton ID="lbtnUserName" runat="server" ></asp:LinkButton>&nbsp;&nbsp;&nbsp;<asp:LinkButton 
+            ID="lbtnLogout" runat="server" Text="Sign Out" onclick="lbtnLogout_Click"></asp:LinkButton>&nbsp;&nbsp;&nbsp;<asp:LinkButton 
+            ID="lbtnSettings" runat="server" Text="Settings" onclick="lbtnSettings_Click"></asp:LinkButton><br /><div style="float:right; margin-right:30px; margin-top:20px;">
+        &nbsp;&nbsp;&nbsp;<asp:Label ID="lbltest" runat="server" ></asp:Label>  <asp:ImageButton ID="refreshimage" runat="server" 
+                ImageUrl="~/images/refresh.jpg" onclick="refreshimage_Click" /></div></div>
+    <a href="#" title="ICE(I)"><img src="../images/logo.gif" alt="ICE(I)" title="ICE (I)"  width="50%"/></a><br />
+    <div id="redline"></div>
+    <div id="usermanage" runat="server">
+    <center><table width="100%"><tr>
+    <td align="center"><asp:ImageButton ID="ibtnUser" ImageUrl="~/images/createcolor.png" runat="server" AlternateText="User" OnClick="ibtnUser_Click" Height="50px" Width="50px"/><br />
+        <asp:LinkButton ID="lbtnUser" runat="server" CssClass="txt2" onclick="lbtnUser_Click">User</asp:LinkButton></td>
+    <td align="center"><asp:ImageButton ID="ibtnMainAC" ImageUrl="~/images/mainacc.png" runat="server" AlternateText="Main Account" OnClick="ibtnMainAC_Click"  Height="50px" Width="50px"/><br />
+        <asp:LinkButton ID="lbtnMainIMAcc" runat="server" CssClass="txt2" onclick="lbtnMainIMAcc_Click">Main IM Account</asp:LinkButton></td>
+    <td align="center"><asp:ImageButton ID="ibtnLateFEEs" runat="server" ImageUrl="~/images/latefee1.jpg" AlternateText="Late Fees Donation" OnClick="ibtnLateFees_Click" Height="50px" Width="50px"/><br />
+        <asp:LinkButton ID="lbtnLateFee" runat="server"  CssClass="txt2" onclick="lbtnLateFee_Click">Donate Late Fees</asp:LinkButton></td>
+    <td align="center"><asp:ImageButton ID="ibtnExamBill" runat="server"  ImageUrl="~/images/exambill.jpg" AlternateText="Examination Billing" OnClick="ibtnExamBill_Click"  Height="50px" Width="50px"/><br />
+        <asp:LinkButton ID="LinkButton1" runat="server"  CssClass="txt2" onclick="lbtnExamBill_Click">Examination Billing</asp:LinkButton></td>
+    <td align="center"><asp:ImageButton ID="ibtnMembershipAC"  runat="server" AlternateText="Membership Account" ImageUrl="~/images/membershipacc.jpg" OnClick="ibtnmembershipAC_Click"  Height="50px" Width="50px"/><br />
+        <asp:LinkButton ID="lbtnMembershipAcc" runat="server"  CssClass="txt2" onclick="lbtnMembershipAcc_Click" >Membership Account</asp:LinkButton></td>
+    <td align="center"><asp:ImageButton ID="ibtnExamAC" runat="server" ImageUrl="~/images/application_add1.png" AlternateText="Add Application Forms" OnClick="ibtnAddAppForm_Click"  Height="50px" Width="50px"/><br />
+        <asp:LinkButton ID="lbtnAddApps" runat="server"  CssClass="txt2" onclick="lbtnAddApps_Click">Add Application</asp:LinkButton></td>
+    <td align="center"><asp:ImageButton ID="ibtnAppApprove" runat="server" AlternateText="Application Forms Approval" ImageUrl="~/images/application_accept1.png" OnClick="ibtnAppApprove_Clickz"  Height="50px" Width="50px"/><br />
+        <asp:LinkButton ID="lbtnApproveApps" runat="server"  CssClass="txt2" onclick="lbtnApproveApps_Click">Approve Application</asp:LinkButton></td>
+    <td align="center"><asp:ImageButton ID="ibtnReport" runat="server" AlternateText="Reports" ImageUrl="~/images/report.png" OnClick="ibtnReport_Click"  Height="50px" Width="50px"/><br />
+        <asp:LinkButton ID="lbtnReport" runat="server"  CssClass="txt2" onclick="lbtnReport_Click">Reports</asp:LinkButton></td></tr>
+    </table></center>
+    </div>
+    <hr />
+    <div id="leftpanel2">
+<div id="leftteg" >
+<asp:Panel ID="panelAdminManage" runat="server" >
+    <script>
+        function toggle(showHideDiv, switchImgTag) {
+            var ele = document.getElementById(showHideDiv);
+            var imageEle = document.getElementById(switchImgTag);
+            if (ele.style.display == "block") {
+                ele.style.display = "none";
+                imageEle.innerHTML = '<img src="../images/plus.png">';
+            }
+            else {
+                ele.style.display = "block";
+                imageEle.innerHTML = '<img src="../images/minus.png">';
+            }
+        }
+    </script>
+  <div class="togelleft">
+    <div class="headerDivImg">
+    <a id="imageDivLink100" href="javascript:toggle('contentDivImg100', 'imageDivLink100');"><img src="../images/plus.png" alt="Show"></a>
+</div><h1>IM Account</h1>
+<div id="contentDivImg100" style="display:none;"> 
+   <br />
+   <div id="leftLink">
+   <ul><li><asp:LinkButton ID="ibtnSubmitMemForm" runat="server" Text="Main IM's Account" CssClass="leftlink" OnClick="ibtnSubmitAmount_Click" ></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnManageDues" runat="server" Text="Manage IM Dues/LateFees" OnClick="ibtnManage_OnClick" CssClass="leftlink"></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnViewAC" runat="server" Text="View DD Details" OnClick="ibtnViewAC_Onclick" CssClass="leftlink"></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnEditMainAC" runat="server" Text="Edit Main Account[DD]" OnClick="ibtnEditAC_Onclick" CssClass="leftlink"></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnLateFeeAC" runat="server" Text="Late Fees Management" OnClick="ibtnLateFeeAC_Onclick" CssClass="leftlink"></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnIMAccount" runat="server" Text="IM Account Transaction" OnClick="lbtnAccountDetails_Click" CssClass="leftlink"></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnUpdateAmount" runat="server" Text="Update IM Amount" OnClick="lbtnUpdateAmount_Click" CssClass="leftlink"></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnInventoryReport" runat="server" Text="Inventory Report" OnClick="lbtnInventoryReport_Click" CssClass="leftlink"></asp:LinkButton></li>
+   </ul>
+    </div>
+    </div>
+   </div>
+   </asp:Panel>
+    <asp:Panel ID="PnlMembership" runat="server" >
+   <script>
+       function toggle99(showHideDiv, switchImgTag) {
+           var ele = document.getElementById(showHideDiv);
+           var imageEle = document.getElementById(switchImgTag);
+           if (ele.style.display == "block") {
+               ele.style.display = "none";
+               imageEle.innerHTML = '<img src="../images/plus.png">';
+           }
+           else {
+               ele.style.display = "block";
+               imageEle.innerHTML = '<img src="../images/minus.png">';
+           }
+       }
+    </script>
+   <div class="togelleft">
+    <div class="headerDivImg">
+        <a id="A2" href="javascript:toggle99('Div1', 'A2');"><img src="../images/plus.png" alt="Show"></a>
+</div><h1>Membership Account</h1>
+<div id="Div1" style="display: none;"> 
+  <br />
+   <div class="leftlist">
+ <ul>
+      <li><asp:LinkButton ID="ibtnAPProvalMem" runat="server" Text="Membership Fees Submission" CssClass="leftlink" OnClick="ibtnSubmitMembership_click" ></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnInfectionReport" runat="server" Text="Decline Membership [Inspection]" OnClick="ibtnInfectionAmt_Onclick" CssClass="leftlink"></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnViewMember" runat="server" Text="View Member Transaction"  CssClass="leftlink" 
+            onclick="lbtnViewMember_Click"></asp:LinkButton></li>
+      </ul>
+    </div>
+    </div>
+    </div>
+    </asp:Panel>
+  <asp:Panel ID="panelProfile" runat="server" >
+   <script>
+       function toggle98(showHideDiv, switchImgTag) {
+           var ele = document.getElementById(showHideDiv);
+           var imageEle = document.getElementById(switchImgTag);
+           if (ele.style.display == "block") {
+               ele.style.display = "none";
+               imageEle.innerHTML = '<img src="../images/plus.png">';
+           }
+           else {
+               ele.style.display = "block";
+               imageEle.innerHTML = '<img src="../images/minus.png">';
+           }
+       }
+    </script>
+   <div class="togelleft">
+    <div class="headerDivImg">
+        <a id="imageDivLink98" href="javascript:toggle98('contentDivImg98', 'imageDivLink98');"><img src="../images/plus.png" alt="Show"></a>
+</div><h1>Exam Center Bill</h1>
+<div id="contentDivImg98" style="display:none;"> 
+  <br />
+   <div class="leftlist">
+ <ul>
+    <li><asp:LinkButton ID="lbtnExamBill" runat="server" Text="Examination Billing" OnClick="lbtnExaminationBill_Click" CssClass="leftlink" ></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnExamBillView" runat="server" Text="View Examination Billing Record" OnClick="lbtnViewExamBill_click" CssClass="leftlink"></asp:LinkButton></li>
+   </ul>
+    </div>
+    </div>
+    </div>
+    </asp:Panel>
+    <asp:Panel ID="pnlAppSubmission" runat="server" >
+   <script>
+       function toggledev(showHideDiv, switchImgTag) {
+           var ele = document.getElementById(showHideDiv);
+           var imageEle = document.getElementById(switchImgTag);
+           if (ele.style.display == "block") {
+               ele.style.display = "none";
+               imageEle.innerHTML = '<img src="../images/plus.png">';
+           }
+           else {
+               ele.style.display = "block";
+               imageEle.innerHTML = '<img src="../images/minus.png">';
+           }
+       }
+    </script>
+   <div class="togelleft">
+    <div class="headerDivImg">
+        <a id="A3" href="javascript:toggledev('Div2', 'A3');"><img src="../images/plus.png" alt="Show"></a>
+</div><h1>Application Forms Submission </h1>
+<div id="Div2" style="display:block;"> 
+  <br />
+   <div class="leftlist">
+ <ul>
+ <li>Application Forms Submission
+ <ul>
+    <li><asp:LinkButton ID="lbtnAddApp1" runat="server" Text="Academic Forms-1" OnClick="lbtnAddApp1_Click" CssClass="leftlink"></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnAddApp1_2" runat="server" Text="Academic Forms-1.2" OnClick="lbtnAddApp1_2_Click" CssClass="leftlink"></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnAddApp2" runat="server" Text="Academic Forms-2" OnClick="lbtnAddApp2_Click" CssClass="leftlink"></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnAddApp3" runat="server" Text="Academic Forms-3" OnClick="lbtnAddApp3_Click" CssClass="leftlink"></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnAddAppProject" runat="server" Text="Project Forms" OnClick="lbtnAddAppPro_Click" CssClass="leftlink"></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnAddAutoCAD" runat="server" Text="M-CAD Forms" OnClick="lbtnAddAutoCAD_Click" CssClass="leftlink"></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnRecheckingForm" runat="server" Text="Rechecking Forms" OnClick="lbtnRecheckingForm_Click" CssClass="leftlink"></asp:LinkButton></li>
+ </ul>
+ </li>
+    <li><asp:LinkButton ID="lbtnDiaryOnHold" runat="server" Text="Diaries On Hold" OnClick="lbtnDiaryOnHold_Click" CssClass="leftlink"></asp:LinkButton></li>
+     <li><asp:LinkButton ID="lbtnAppEdit" runat="server" Text="Edit Application Form" OnClick="lbtnAppEdit_Click" CssClass="leftlink"></asp:LinkButton></li>
+     <li><asp:LinkButton ID="lbtnCancelAppForm2" runat="server" Text="Cancel Academic Form-2" OnClick="lbtnCancelAppForm2_Click" CssClass="leftlink"></asp:LinkButton></li>
+     <li><asp:LinkButton ID="lbtnCancelAppForm3" runat="server" Text="Cancel Academic Form-3" OnClick="lbtnCancelAppForm3_Click" CssClass="leftlink"></asp:LinkButton></li>
+     <li><asp:LinkButton ID="lbtnCancelProject" runat="server" Text="Cancel Project Form"  CssClass="leftlink" onclick="lbtnCancelProject_Click"></asp:LinkButton></li>
+     <li><asp:LinkButton ID="lbtnCancelRechecking" runat="server" Text="Cancel ReChecking Form"  CssClass="leftlink" onclick="lbtnCancelRechecking_Click"></asp:LinkButton></li>
+
+   </ul>
+    </div>
+    </div>
+    </div>
+    </asp:Panel>
+    <asp:Panel ID="panelApproval" runat="server" >
+   <script>
+       function toggle89(showHideDiv, switchImgTag) {
+           var ele = document.getElementById(showHideDiv);
+           var imageEle = document.getElementById(switchImgTag);
+           if (ele.style.display == "block") {
+               ele.style.display = "none";
+               imageEle.innerHTML = '<img src="../images/plus.png">';
+           }
+           else {
+               ele.style.display = "block";
+               imageEle.innerHTML = '<img src="../images/minus.png">';
+           }
+       }
+    </script>
+   <div class="togelleft">
+    <div class="headerDivImg">
+        <a id="A1" href="javascript:toggle89('Dev1', 'A1');"><img src="../images/minus.png" alt="Show"></a>
+</div><h1>Application Approval </h1>
+<div id="Dev1" style="display: block;"> 
+  <br />
+   <div class="leftlist">
+ <ul>
+    <li><asp:LinkButton ID="lbtnAppAproval" runat="server" Text="Approve Application Forms" OnClick="lbtnAppAproval_Click" CssClass="leftlink" ></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnPendingApprove" runat="server" Text="Re-Approve Application Forms" OnClick="lbtnPendingApprove_Click" CssClass="leftlink"></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnViewAppAproval" runat="server" Text="View Application Forms" OnClick="lbtnViewAppForms_click" CssClass="leftlink"></asp:LinkButton></li>
+    <li><asp:LinkButton ID="lbtnDebitNote" runat="server" Text="View Debit Note" CssClass="leftlink" onclick="lbtnDebitNote_Click"></asp:LinkButton></li>
+   <li><asp:LinkButton ID="lbtnUpdateLateFees" runat="server" Text="Update Late Fees" CssClass="leftlink" onclick="lbtnUpdateLateFees_Click"></asp:LinkButton></li>
+   <li><asp:LinkButton ID="lbtnUpdateExamFees" runat="server" Text="Update Exam Fees" CssClass="leftlink" onclick="lbtnUpdateExamFees_Click"></asp:LinkButton></li>
+    <li><a href="../Reports/AC/Default.aspx?maikal=&lnk=rpt&lvl=zero&typ=AC" title="Reports" target="_blank" class="leftlink">Report(s)</a></li>   
+   <li><asp:LinkButton ID="lbtnManageCompositefees" runat="server" Text="Manage Composite Fees" CssClass="leftlink" onclick="lbtnManageCompositeFees_Click"></asp:LinkButton></li>   
+   <li><asp:LinkButton ID="lbtnEditExamCurrent" runat="server" Text="Edit Exam current" CssClass="leftlink" onclick="lbtnEditExamCurrent_Click"></asp:LinkButton></li>   
+   </ul>
+    </div>
+    </div>
+    </div>
+    </asp:Panel>
+    <div id="panelAdmission" runat="server" visible="false" >
+          <script>
+              function toggle99(showHideDiv, switchImgTag) {
+                  var ele = document.getElementById(showHideDiv);
+                  var imageEle = document.getElementById(switchImgTag);
+                  if (ele.style.display == "block") {
+                      ele.style.display = "none";
+                      imageEle.innerHTML = '<img src="../images/plus.png">';
+                  }
+                  else {
+                      ele.style.display = "block";
+                      imageEle.innerHTML = '<img src="../images/minus.png">';
+                  }
+              }
+    </script>
+   <div class="togelleft">
+    <div class="headerDivImg">
+    <a id="imageDivLink99" href="javascript:toggle99('contentDivImg99', 'imageDivLink99');"><img src="../images/minus.png" alt="Show"></a>
+</div><h1>Update Accounts</h1>
+<div id="contentDivImg99" style="display: block;"> 
+     <br />
+   <div class="leftlist">
+   <ul>
+    <li><asp:LinkButton ID="ibtnAdmissionForm" runat="server" Text="Update Application Forms Record(s)" OnClick="ibtnUpdateApppRecord_Click" CssClass="leftlink" ></asp:LinkButton></li>
+    <li><asp:LinkButton ID="ibtnExaminationFrom" runat="server" Text="Update Examination Billing" OnClick="ibtnUpdateExamBilling_Click" CssClass="leftlink"></asp:LinkButton></li>
+   </ul>
+  <%--<ul>
+  <li><asp:LinkButton ID="lbtnNewAdmission" runat="server" Text="New Admission" OnClick="lbtnNewAdmission_Click" CssClass="leftlink"></asp:LinkButton></li>
+  <li><asp:LinkButton ID="lbtnGenerateID" runat="server" Text="Enrolment ID" OnClick="lbtnEnrolmetID_Click" CssClass="leftlink"></asp:LinkButton></li>
+  <li><asp:LinkButton ID="lbtnRenewal" runat="server" Text="ReNew Admission" OnClick="lbtnRenewalAdmisoin_Click" CssClass="leftlink"></asp:LinkButton></li>
+  <li><asp:LinkButton ID="lbtnEditProfile" runat="server" Text="Edit Profile" OnClick="lbtnEdit_Click" CssClass="leftlink"></asp:LinkButton></li>
+  <li><asp:LinkButton ID="lblUpdoadDoc" runat="server" Text="Upload Documents" OnClick="lbtnUploaddocs_Click" CssClass="leftlink"></asp:LinkButton></li>
+  <li><asp:LinkButton ID="lbtnUploadImages" runat="server" Text="Upload Pics/Signatures" OnClick="lbtnUploadImages_Click" CssClass="leftlink"></asp:LinkButton></li>
+  </ul>--%>
+    </div>
+    </div>
+   </div>
+  </div>
+</div>
+</div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    <!--  end right Panel ---> 
+    </div><br />
+    </div>
+    <!-- footer -->
+    <div class="footer">
+     <br /><br /><center><table><tr><td><a href="#" title="About ICE (I)">About ICE(I)</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="About ICE (I)">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="About ICE (I)">Term & Condition</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="About ICE (I)">Help & Support</a></td></tr></table></center>
+	<center>© Copyright The Institution of Civil Engineers (India). All Rights Reserved</center>
+	</div>
+    </form>
+</body>
+</html>
